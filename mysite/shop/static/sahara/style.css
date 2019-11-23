@@ -1,0 +1,151 @@
+{%load static%}
+@font-face {
+    font-family: typo;
+    src: url(Typographica-Blp5.ttf);
+}
+@font-face{
+    font-family: item;
+    src: url(FulboTano-d9ABZ.otf);
+}
+
+.top {
+    margin: -8px;
+    color: white;
+    width: 101.25%;
+    height: 70px;
+}
+
+#disp {
+    background-color: #1c1c1c;
+    width: 100%;
+    height: 70px;
+}
+
+
+
+#title{
+    font-family: typo,sans-serif;
+    text-align: center;
+    font-size: 40px;
+    background-color: #1c1c1c;
+    height: 50px;
+    width: auto;
+    margin  : auto;
+    margin-top: -1em;
+    margin-left: 0.5em;
+}
+
+#logo{
+    height: 50px;
+    width: 50px;
+    margin-left: 27.5em;
+    margin-top: -1.9em;
+}
+
+#cart{
+    margin-left: 25em;
+    margin-top: -1.8em;
+    border-top: 1em;
+    float: right;
+}
+
+#user{
+    height: 50px;
+    width: 50px;
+    background-color: #0c0c0c;
+    margin-top: -1.9em;
+    border-radius: 10px;
+}
+
+#user_pic{
+    margin: 5px;
+    height: 40px;
+}
+
+#items{
+    margin-top: 0.5em;
+    background-color: #1c1c1c;
+    width: 101.25%;
+    margin-left: -8px;
+    height: 34.968em;
+}
+
+table{
+    font-family: item,sans-serif;
+    color: white;
+    font-size: 18px;
+    margin: auto;
+}
+
+.items{
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 3em;
+    height: 10em;
+}
+
+#subcats{
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.subcats{
+    font-family: item,sans-serif;
+    width: 101.25%;
+    margin-left: -8px;
+    background-color: #2e2e2e;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#item_space{
+    width: 90%;
+    margin: auto;
+}
+
+.item_box{
+    text-align: center;
+    background-color: #383838;
+    height: 17.2em;
+    width: 11em;
+    border-radius: 8px;
+    margin: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    display: inline-block;
+}
+
+.info{
+    padding: 0.5em;
+    text-align: left;
+    background-color: #2e2e2e;
+    height: 4em;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.icon{
+    margin-top: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+.price{
+    padding: 0.5em;
+    text-align: left;
+    margin-top: -2.5em;
+    margin-left: -1em;
+}
+
+.star{
+    margin-left: 4em;
+    margin-top: -2em;
+}
+
+.star_img{
+    height: 20px;
+}
+
+.icon_box{
+    width: 100%;
+}

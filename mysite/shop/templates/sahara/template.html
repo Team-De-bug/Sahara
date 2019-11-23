@@ -1,0 +1,37 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+<title>Sahara</title>
+<body bgcolor="#0f0f0f">
+<link rel="stylesheet" type="text/css" href="{% static 'sahara/style.css'%}">
+<link rel="shortcut icon" href="{%static 'sahara/favicon.ico' %}">
+<div class="top">
+    <div id="disp">
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td><img id="logo" src="{% static 'sahara/sahara-1.png'%}" border="0"></td>
+                <td><div id="title">Sahara</div></td>
+                <td><img id="cart" src="{% static 'sahara/cart.png' %}" border="0"></td>
+                <td><div id="user"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></div></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="subcats">
+    <table>
+        <tr>
+            <td id="subcats">Categories</td>
+            <td id="subcats">IoT</td>
+            <td id="subcats">Sign In</td>
+        </tr>
+    </table>
+</div>
+<div id="item_space">
+    {%block content%}
+    {%endblock%}
+</div>>
+</body>
+</html>
