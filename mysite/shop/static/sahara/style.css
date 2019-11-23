@@ -1,4 +1,3 @@
-{%load static%}
 @font-face {
     font-family: typo;
     src: url(Typographica-Blp5.ttf);
@@ -6,6 +5,11 @@
 @font-face{
     font-family: item;
     src: url(FulboTano-d9ABZ.otf);
+}
+
+body{
+    color: white;
+    font-family: item,sans-serif;
 }
 
 .top {
@@ -71,10 +75,10 @@
 }
 
 table{
-    font-family: item,sans-serif;
     color: white;
     font-size: 18px;
     margin: auto;
+    width: auto;
 }
 
 .items{
@@ -90,7 +94,6 @@ table{
 }
 
 .subcats{
-    font-family: item,sans-serif;
     width: 101.25%;
     margin-left: -8px;
     background-color: #2e2e2e;
@@ -148,4 +151,67 @@ table{
 
 .icon_box{
     width: 100%;
+}
+
+#login_up{
+    background-color: #2e2e2e;
+    width:25em;
+    height: 34em;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 8px;
+}
+
+#login_title{
+    background: #414141;
+    width: 23em;
+    height: 2em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 1em;
+}
+
+#input{
+    width: 23em;
+    height: 23em;
+    margin: 1em;
+}
+
+#field{
+    width: 90%;
+    height: 0.5em;
+    border: 10px;
+    border-radius: 8px;
+    padding: 1em;
+    font-size: 18px;
+}
+
+#submit{
+    font-size: 18px;
+    font-family: item,sans-serif;
+    color: white;
+    background-color: #585858;
+    width: 100%;
+    height: 3em;
+    border: none;
+    border-radius: 8px;
+}
+
+#sin{
+    width: 4em;
+    height: auto;
+}
+
+a{
+    color: white;
+}
+
+#signup{
+    width: 23em;
+    height: 27em;
+    margin: 1em;
+}
+
+#ask{
+    margin-top: 1em;
 }
