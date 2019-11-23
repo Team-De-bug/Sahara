@@ -1,6 +1,7 @@
-{%extends 'sahara/login:signup.html'
+{%extends 'user/login:signup.html' %}
+{%load static%}
+{% block user%}
 
-{%block user%}
 <div id="login_title">
     Login
 </div>
@@ -10,6 +11,7 @@
     Password<br>
     <input type="password" placeholder="Password" id="pwd" name="password" required><br><br><br><br><br>
     <a href="/login"><button type="submit" id="submit">Login</button></a>
-    <div id="ask">Don't have an account?<a href="/signup">Sign up</a></div>
+    <div id="ask">Don't have an account?<a href="/user/signup/">Sign up</a></div>
 </div>
-{%endblock%}
+
+{% endblock %}
