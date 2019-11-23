@@ -1,17 +1,18 @@
-{%extends 'user/login:signup.html' %}
-{%load static%}
-{% block user%}
+{%extends 'sahara/template.html'%}
+{%block content%}
 
-<div id="login_title">
-    Login
-</div>
-<div id="input">
-    Username<br>
-    <input type="text" placeholder="Username" id="uname" name="username" required><br><br>
-    Password<br>
-    <input type="password" placeholder="Password" id="pwd" name="password" required><br><br><br><br><br>
-    <a href="/login"><button type="submit" id="submit">Login</button></a>
-    <div id="ask">Don't have an account?<a href="/user/signup/">Sign up</a></div>
+<div id="login_up">
+    <div id="login_title">
+        Login
+    </div>
+    <div id="input">
+        Username<br>
+        <input type="text" placeholder="Username" id="uname" name="username" required><br><br>
+        Password<br>
+        <input type="password" placeholder="Password" id="pwd" name="password" required><br>    <br><br><br><br>
+        <a href="/login"><button type="submit" id="submit">Login</button></a>
+        <div id="ask">Don't have an account?<a href="/user/signup/">Sign up</a></div>
+    </div>
 </div>
 
 {% endblock %}
