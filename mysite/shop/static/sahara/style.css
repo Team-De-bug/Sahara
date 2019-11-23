@@ -81,6 +81,11 @@ table{
     width: auto;
 }
 
+#head{
+    width: auto;
+    margin-top: -1.2em;
+}
+
 .items{
     padding-left: 1em;
     padding-right: 1em;
