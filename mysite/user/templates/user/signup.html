@@ -10,10 +10,14 @@
     <form id="signup" method="POST">
         {% csrf_token %}
 
-        <p>{{ form.username }}</p>
-        <p>{{ form.email }}</p>
-        <p>{{ form.password1 }}</p>
-        <p>{{ form.password2 }}</p>
+        <p><label for="id_username">Username:</label>
+            {{ form.username }}</p>
+        <p><label for="id_email">Email:</label>
+            {{ form.email }}</p>
+        <p><label for="id_password1">Password:</label>
+            {{ form.password1 }}</p>
+        <p><label for="id_password2">Confirm Password:</label>
+            {{ form.password2 }}</p>
         <button type="submit" id="submit">Login</button>
         <div id="ask">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
     </form>
