@@ -18,5 +18,5 @@ def signup(request):
     return render(request, 'user/signup.html', {"form": form})
 
 
-def login(request):
-    return render(request, 'user/login.html')
+def profile(request):
+    return render(request, "user/profile.html")

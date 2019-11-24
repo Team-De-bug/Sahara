@@ -6,3 +6,7 @@ from .models import Stock
 def index(request):
     items = Stock.objects.all()
     return render(request, "sahara/item.html", {'items': items})
+
+
+def cart(request):
+    return render(request, "sahara/cart.html")
