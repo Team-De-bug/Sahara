@@ -15,7 +15,7 @@
                 <td><img id="logo" src="{% static 'sahara/sahara-1.png'%}" border="0"></td>
                 <td><div id="title">Sahara</div></td>
                 <td><a href="user/cart/"><img id="cart" src="{% static 'sahara/cart.png' %}" border="0"></a></td>
-                <td><div id="user"><a href="user/"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></a></div></td>
+                <td><div id="user"><a href="#"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></a></div></td>
             </tr>
         </table>
     </div>
@@ -25,11 +25,17 @@
         <tr>
             <td id="subcats">Categories</td>
             <td id="subcats">IoT</td>
-            <td id="subcats"><a href="/user/signup"><div>Sign In</div></a></td>
+            <td id="subcats"><a href="{% url 'signup'%}"><div>Sign In</div></a></td>
         </tr>
     </table>
 </div>
 <div id="item_space">
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{message}}</div>
+        {% endfor %}
+    {% endif %}
+
     {%block content%}
     {%endblock%}
 </div>

@@ -6,18 +6,13 @@
     <div id="login_title">
         Sign up
     </div>
-    <div id="signup">
-        E-mail<br>
-        <input type="email" placeholder="E-mail" id="field" name="email" required><br><br>
-        Username<br>
-        <input type="text" placeholder="Username" id="field" name="username" required><br><br>
-        Password<br>
-        <input type="password" placeholder="Password" id="field" name="password" required><br><br>
-        Password(Again)<br>
-        <input type="password" placeholder="Password" id="field" name="password" required><br><br>
-        <a href="signup"><button type="submit" id="submit">Login</button></a>
-        <div id="ask">Already have an account? <a href="/user/login/">Sign in</a></div>
-    </div>
+
+    <form id="signup" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit">Login</button>
+        <div id="ask">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
+    </form>
 </div>
 
 {% endblock %}

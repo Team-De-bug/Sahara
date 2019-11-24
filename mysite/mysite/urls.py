@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from shop import views as shop_views
-import user
+from django.contrib.auth import views as auth_views
+from user import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', include('user.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name="login"),
+    path('signup/', user_views.signup, name="signup"),
+    path('logout/', auth_views.LogoutView.as_view(template_name='sahara/item.html'), name="logout"),
     path('', shop_views.index, name="index"),
 ]
