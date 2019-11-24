@@ -15,7 +15,7 @@
                 <td><img id="logo" src="{% static 'sahara/sahara-1.png'%}" border="0"></td>
                 <td><div id="title">Sahara</div></td>
                 <td><a href="{% url 'cart'%}"><img id="cart" src="{% static 'sahara/cart.png' %}" border="0"></a></td>
-                <td><div id="user"><a href="#"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></a></div></td>
+                <td><div id="user"><a href="{%url 'profile'%}"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></a></div></td>
             </tr>
         </table>
     </div>
@@ -25,7 +25,11 @@
         <tr>
             <td id="subcats">Categories</td>
             <td id="subcats">IoT</td>
-            <td id="subcats"><a href="{% url 'login'%}"><div>Sign In</div></a></td>
+            {% if user.is_authenticated%}
+                <td id="subcats"><a href="{% url 'logout'%}"><div>Sign out</div></a></td>
+            {% else %}
+                <td id="subcats"><a href="{% url 'login'%}"><div>Sign in</div></a></td>
+            {% endif %}
         </tr>
     </table>
 </div>
