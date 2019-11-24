@@ -161,7 +161,7 @@ table{
 #logup{
     background-color: #2e2e2e;
     width:25em;
-    height: 34em;
+    height: 31.5em;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 8px;
@@ -170,7 +170,7 @@ table{
 #login{
     background-color: #2e2e2e;
     width:25em;
-    height: 24em;
+    height: 21em;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 8px;
@@ -182,7 +182,9 @@ table{
     height: 2em;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
 }
 
 #input{
