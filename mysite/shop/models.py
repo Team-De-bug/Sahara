@@ -9,6 +9,7 @@ class Stock(models.Model):
     quantity = models.IntegerField(name="quantity", default=1)
     description = models.TextField(name="description", default="")
     seller = models.CharField(max_length=100, name="seller", default="sahara")
+    product_pic = models.ImageField(default='item.png', upload_to="products", name="product_pic")
 
     def __str__(self):
         return self.product_name

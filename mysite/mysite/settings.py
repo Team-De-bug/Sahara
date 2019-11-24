@@ -76,19 +76,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sahara',
+        'USER': 'root',
+        'PASSWORD': 'Say Your Name!23',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 
-    #'default': {
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'sahara',
-        #'USER': 'root',
-        #'PASSWORD': 'Say Your Name!23',
-        #'HOST': 'localhost',
-        #'PORT': '3306',
-    #}
+#    '''
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        }'''
+
 }
 
 
@@ -132,3 +135,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
