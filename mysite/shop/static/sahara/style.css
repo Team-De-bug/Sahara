@@ -158,10 +158,19 @@ table{
     width: 100%;
 }
 
-#login_up{
+#logup{
     background-color: #2e2e2e;
     width:25em;
     height: 34em;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 8px;
+}
+
+#login{
+    background-color: #2e2e2e;
+    width:25em;
+    height: 24em;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 8px;
@@ -174,6 +183,12 @@ table{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: 1em;
+}
+
+#input{
+    height: 23em;
+    width: 23em;
+    margin: 1em;
 }
 
 input{
@@ -197,10 +212,6 @@ input{
     border-radius: 8px;
 }
 
-#sin{
-    width: 4em;
-    height: auto;
-}
 
 a{
     color: white;
