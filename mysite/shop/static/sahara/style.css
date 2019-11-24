@@ -242,3 +242,32 @@ a{
     margin-left: 1em;
     margin-top: 1em;
 }
+
+#cart_item{
+    background-color: #383838;
+    width: 85%;
+    height: 250px;
+    border-radius: 8px;
+    margin-top: 2em;
+}
+
+#cart_img{
+    background-color: #585858;
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+#cart_info{
+    display: inline-block;
+}
+
+#cart_table{
+    width: auto;
+    height: 250px;
+}
+
+#cart_price{
+    width: 500px;
+}
