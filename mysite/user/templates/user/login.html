@@ -2,7 +2,7 @@
 {%block content%}
 {%load static%}
 
-<div id="login_up">
+<div id="login">
     <div id="login_title">
         Login
     </div>
@@ -10,8 +10,10 @@
 
         {% csrf_token %}
 
-        <p>{{form.username}}</p>
-        <p>{{form.password}}</p>
+        <p><label for="id_username">Username:</label>
+            {{form.username}}</p>
+        <p><label for="id_password">Password:</label>
+            {{form.password}}</p>
 
         <a href="/login"><button type="submit" id="submit">Login</button></a>
         <div id="ask">Don't have an account? <a href="{% url 'signup'%}">Sign up</a></div>
