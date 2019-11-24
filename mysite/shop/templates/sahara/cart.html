@@ -2,10 +2,10 @@
 {% load static%}
 
 {%block content%}
-{% for item in items%}
+{% for item in cart%}
 <div id="cart_item">
     <div id="cart_img">
-        <!--<img src="{{ item.product_pic.url }}">-->
+        <img src="{{ item.product_pic.url }}">
     </div>
     <div id="cart_info">
         <table id="cart_table">

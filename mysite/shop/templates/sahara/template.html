@@ -15,7 +15,11 @@
                 <td><img id="logo" src="{% static 'sahara/sahara-1.png'%}" border="0"></td>
                 <td><div id="title">Sahara</div></td>
                 <td><a href="{% url 'cart'%}"><img id="cart" src="{% static 'sahara/cart.png' %}" border="0"></a></td>
-                <td><div id="user"><a href="{%url 'profile'%}"><img id="user_pic" src="{{user.profile.profile_pic.url}}"></a></div></td>
+                {% if user.is_authenticated%}
+                    <td><div id="user"><a href="{%url 'profile'%}"><img id="user_pic" src="{{user.profile.profile_pic.url}}"></a></div></td>
+                {% else %}
+                    <td><div id="user"><a href="{%url 'profile'%}"><img id="user_pic" src="{% static 'sahara/sahara-2.png'%}"></a></div></td>
+                {% endif %}
             </tr>
         </table>
     </div>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from shop.models import Stock
 
 
 # Create your models here.
@@ -9,3 +10,12 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    items = models.IntegerField(default=0, name="items")
+    products = models.ManyToManyField(Stock, blank=True)
+
+    def __str__(self):
+        return f'{self.user.username} Cart'
