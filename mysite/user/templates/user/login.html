@@ -9,7 +9,9 @@
     <form id="input" method="POST">
 
         {% csrf_token %}
-        {{form.as_p}}
+
+        <p>{{form.username}}</p>
+        <p>{{form.password}}</p>
 
         <a href="/login"><button type="submit" id="submit">Login</button></a>
         <div id="ask">Don't have an account? <a href="{% url 'signup'%}">Sign up</a></div>
