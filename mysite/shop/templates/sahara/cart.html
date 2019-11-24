@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'sahara/template.html'%}
+{% load static%}
 
-</body>
-</html>
+{%block content%}
+{% for item in items%}
+<div id="cart_item">
+    <div id="cart_img">
+        <!--<img src="{{ item.product_pic.url }}">-->
+    </div>
+    <div id="cart_info">
+        <table id="cart_table">
+            <tr>
+                <td>{{item.product_name}}</td>
+            </tr>
+            <tr>
+                <td>{{item.seller}}r</td>
+            </tr>
+            <tr>
+                <td id="cart_price">{{item.cost}}</td>
+                <td><a href="">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
