@@ -1,0 +1,15 @@
+{%extends 'sahara/template.html'%}
+{%block content%}
+{%load static%}
+
+<div id="logout">
+    <div id="login_title">
+        Logged Out
+    </div>
+
+    <div id="logged">You are logged out. <a href="{% url 'login'%}">Login</a> or Go to <a href="#/">Home</a></div>
+
+
+</div>
+
+{% endblock %}

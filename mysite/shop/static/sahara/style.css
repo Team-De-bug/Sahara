@@ -176,6 +176,15 @@ table{
     border-radius: 8px;
 }
 
+#logout{
+    background-color: #2e2e2e;
+    width:25em;
+    height: 7em;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 8px;
+}
+
 #login_title {
     background: #414141;
     width: 23em;
@@ -226,5 +235,10 @@ a{
 }
 
 #ask{
+    margin-top: 1em;
+}
+
+#logged{
+    margin-left: 1em;
     margin-top: 1em;
 }
