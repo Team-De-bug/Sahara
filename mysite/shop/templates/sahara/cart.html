@@ -5,18 +5,18 @@
 {% for item in cart%}
 <div id="cart_item">
     <div id="cart_img">
-        <img src="{{ item.product.product_pic.url }}">
+        <img id="cart_img" src="{{ item.product.product_pic.url }}">
     </div>
     <div id="cart_info">
         <table id="cart_table">
             <tr>
-                <td>{{item.product.product_name}}</td>
+                <td>Product Name: {{item.product.product_name}}</td>
             </tr>
             <tr>
-                <td>{{item.product.seller}}r</td>
+                <td>Seller: {{item.product.seller}}r</td>
             </tr>
             <tr>
-                <td id="cart_price">{{item.product.cost}}</td>
+                <td id="cart_price"> Price: ₹ {{item.product.cost}}</td>
                 <td><a href="">Delete</a></td>
             </tr>
         </table>
