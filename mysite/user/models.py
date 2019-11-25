@@ -15,7 +15,15 @@ class Profile(models.Model):
 class Cart(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     items = models.IntegerField(default=0, name="items")
-    products = models.ManyToManyField(Stock, blank=True)
 
     def __str__(self):
-        return f'{self.user.username} Cart'
+        return f'{self.user.username} cart'
+
+
+class Order(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f'{self.cart.user.username} order'

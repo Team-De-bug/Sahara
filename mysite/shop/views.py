@@ -17,6 +17,6 @@ def item(request):
 @login_required()
 def cart(request):
     cart = Cart.objects.filter(user=request.user)
-    cart = cart[0].products.all()
+    cart = cart[0].order_set.all()
     print(cart)
     return render(request, "sahara/cart.html", {'cart': cart})

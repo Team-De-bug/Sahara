@@ -1,0 +1,7 @@
+from django.contrib.auth.models import User
+from shop.models import Stock
+from user.models import Cart, Order
+
+users = User.objects.all()
+stocks = Stock.objects.all()
+carts = Cart.objects.all()
