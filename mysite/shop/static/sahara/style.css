@@ -25,29 +25,19 @@ body{
     height: 70px;
 }
 
-
-
-#title{
-    font-family: typo,sans-serif;
-    text-align: center;
-    font-size: 40px;
-    background-color: #1c1c1c;
-    height: 50px;
-    width: auto;
-    margin  : auto;
-    margin-top: -1em;
-    margin-left: 0.5em;
+#head{
+    margin-left: 29.5em;
 }
 
-#logo{
-    height: 50px;
-    width: 50px;
-    margin-left: 27.5em;
-    margin-top: -1.9em;
+#titletd{
+    width: 4000px;
+}
+
+#title{
+    margin-top: -2em;
 }
 
 #cart{
-    margin-left: 25em;
     margin-top: -1.8em;
     border-top: 1em;
     float: right;

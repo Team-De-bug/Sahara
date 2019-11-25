@@ -26,5 +26,21 @@
         </tr>
     </table>
 </div>
+
+<script src="{%static 'sahara/jquery-3.4.1.js'%}"> </script>
+
 {% endfor %}
+
+<script>
+    $(function(){
+
+        $(".item_box").on('click', function() {
+            $('.item_box .info').html('added to cart')
+        });
+
+
+    });
+
+
+</script>
 {% endblock %}
