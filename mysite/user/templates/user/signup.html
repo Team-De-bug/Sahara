@@ -2,6 +2,8 @@
 {%block content%}
 {%load static%}
 
+{{form.non_field_errors}}
+
 <div id="logup">
     <div id="login_title">
         Sign up
@@ -21,6 +23,13 @@
         <button type="submit" id="submit">Signup</button>
         <div id="ask">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
     </form>
+</div>
+
+<div id='login'>
+    {{form.username.errors}}
+    {{form.email.errors}}
+    {{form.password1.errors}}
+    {{form.password2.errors}}
 </div>
 
 {% endblock %}
