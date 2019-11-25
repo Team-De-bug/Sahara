@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'sahara/template.html'%}
+{% load static%}
 
-</body>
-</html>
+{%block content%}
+{% for item in items%}
+
+<div id="profile_name">
+    <div id="profile_title">
+        Profile
+    </div>
+    <div id="profile_imgdiv">
+        <img id="profile_img" src="{{user.profile.profile_pic.url}}">
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

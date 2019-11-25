@@ -273,3 +273,37 @@ a{
 #cart_price{
     width: 500px;
 }
+
+#profile_name{
+    background-color: #383838;
+    height: 28em;
+    width: 90%;
+    margin-top: 1em;
+    border-radius: 8px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#profile_title{
+    background-color: #585858;
+    height: 2em;
+    width: 102.3%;
+    margin-left: -1em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+}
+
+#profile_imgdiv{
+    background-color: #1c1c1c;
+    height: 120px;
+    width: 120px;
+    padding: 12px;
+    border-radius: 16px;
+    margin-top: 2em;
+}
+
+#profile_img{
+    height: 120px;
+}
