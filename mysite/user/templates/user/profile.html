@@ -2,16 +2,49 @@
 {% load static%}
 
 {%block content%}
-{% for item in items%}
-
 <div id="profile_name">
     <div id="profile_title">
         Profile
     </div>
-    <div id="profile_imgdiv">
-        <img id="profile_img" src="{{user.profile.profile_pic.url}}">
-    </div>
+    <table id="profile_table">
+        <tr>
+            <td>
+                <div id="profile_imgdiv">
+                    <img id="profile_img" src="{{user.profile.profile_pic.url}}">
+                </div>
+            </td>
+            <td>
+                <div id="profile_info">
+                    <table id="info_table">
+                        <tr>
+                            <td>First Name:
+                            </td>
+                            <td>
+                               <input value=" {{user.profile.user}}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:
+                            </td>
+                            <td>
+                                <input value=" {{user.profile.user}}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email Address:
+                            </td>
+                            <td>
+                               <input value=" {{user.profile.user}}">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><button id="save" type="submit" >Save</button>
+            </td>
+        </tr>
+    </table>
 </div>
-
-{% endfor %}
 {% endblock %}

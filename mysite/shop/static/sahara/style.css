@@ -276,7 +276,7 @@ a{
 
 #profile_name{
     background-color: #383838;
-    height: 28em;
+    height: 20em;
     width: 90%;
     margin-top: 1em;
     border-radius: 8px;
@@ -306,4 +306,25 @@ a{
 
 #profile_img{
     height: 120px;
+}
+
+#profile_info{
+    height: auto;
+}
+
+#info_table{
+    height: 10em;
+    width: auto;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+#profile_table{
+    margin-left: 2em;
+}
+
+#save{
+    width: 4em;
+    height: 3em;
+    border-radius: 8px;
 }
