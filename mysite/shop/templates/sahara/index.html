@@ -3,7 +3,7 @@
 
 {%block content%}
 {% for item in items%}
-<div class="item_box">
+<div class="item_box" id="{{item.id}}">
     <div class="icon_box">
         <img class="icon" src="{{ item.product_pic.url }}">
     </div>
@@ -31,16 +31,26 @@
 
 {% endfor %}
 
-<script>
-    $(function(){
-
-        $(".item_box").on('click', function() {
-            $('.item_box .info').html('added to cart')
+<script >
+  $(function() {
+    $('.item_box').click(function() {
+      var id = this.id;
+      console.log(id);
+        $.ajax({
+            url : '/place',
+            data : {
+              'product_id' : id
+              },
+            type : 'GET',
+            success : function(response) {
+                alert("added to cart");
+            },
+            error : function(error) {
+                alert("error unable to add to cart");
+            }
         });
-
-
     });
-
-
+});
 </script>
+
 {% endblock %}
