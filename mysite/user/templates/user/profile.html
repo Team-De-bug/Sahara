@@ -17,32 +17,40 @@
                 <div id="profile_info">
                     <table id="info_table">
                         <tr>
+                            <td>Username:
+                            </td>
+                            <td>
+                                <input value="{{user.profile.user}}">
+                            </td>
+                        </tr>
+                        <tr>
                             <td>First Name:
                             </td>
                             <td>
-                               <input value=" {{user.profile.user}}">
+                               <input value=" {{user.profile.first_name}}">
                             </td>
                         </tr>
                         <tr>
                             <td>Last Name:
                             </td>
                             <td>
-                                <input value=" {{user.profile.user}}">
+                                <input value=" {{user.profile.last_name}}">
                             </td>
                         </tr>
                         <tr>
                             <td>Email Address:
                             </td>
                             <td>
-                               <input value=" {{user.profile.user}}">
+                               <input  value=" {{user.profile.email}}">
                             </td>
                         </tr>
                     </table>
                 </div>
             </td>
         </tr>
-        <tr>
-            <td><button id="save" type="submit" >Save</button>
+        <tr><td></td>
+            <td></td>
+            <td><button id="save" type="submit">Save</button>
             </td>
         </tr>
     </table>

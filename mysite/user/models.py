@@ -6,6 +6,9 @@ from shop.models import Stock
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=50, name="first_name", default="First")
+    last_name = models.CharField(max_length=50, name="last_name", default="Last")
+    email = models.EmailField( name="email", default="username@sahara.com")
     profile_pic = models.ImageField(default='sahara-1.png', upload_to='profile_pics', name="profile_pic")
 
     def __str__(self):
