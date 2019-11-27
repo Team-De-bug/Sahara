@@ -26,10 +26,11 @@
 </div>
 
 <div id='login'>
-    {{form.username.errors}}
-    {{form.email.errors}}
-    {{form.password1.errors}}
-    {{form.password2.errors}}
+    <h3>note:</h3> username
+    {{form.username.help_text}}
+    {{form.email.help_text}}
+    {{form.password1.help_text}}
+    {{form.password2.help_text}}
 </div>
 
 {% endblock %}
