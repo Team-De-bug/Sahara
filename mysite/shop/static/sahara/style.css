@@ -275,7 +275,7 @@ a{
 }
 
 #qty{
-    width: 3em;
+    width: 2em;
     margin-left: 5px;
 }
 
@@ -339,7 +339,7 @@ a{
     border-radius: 8px;
 }
 
-#invis{
+#order_id{
     display: none;
 }
 
