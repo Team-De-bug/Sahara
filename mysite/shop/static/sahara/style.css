@@ -274,6 +274,11 @@ a{
     width: 500px;
 }
 
+#qty{
+    width: 2.5em;
+    margin-left: 5px;
+}
+
 #profile_name{
     background-color: #383838;
     height: 23em;
