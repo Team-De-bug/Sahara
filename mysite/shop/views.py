@@ -10,6 +10,10 @@ from user.models import Order, Cart
 # Index view.
 def index(request):
     items = Stock.objects.all()
+    items = list(items)
+    for item in items:
+        if item.quantity < 1:
+            items.remove(item)
     return render(request, "sahara/index.html", {'items': items})
 
 
