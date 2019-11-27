@@ -162,7 +162,7 @@ table{
 #logup{
     background-color: #2e2e2e;
     width:25em;
-    height: 31.5em;
+    height: 29em;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 8px;
@@ -343,3 +343,18 @@ a{
     display: none;
 }
 
+#error{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#errordiv{
+    background-color: #2e2e2e;
+    width:25em;
+    height: 22em;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 8px;
+}
