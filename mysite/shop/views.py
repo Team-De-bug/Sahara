@@ -6,12 +6,15 @@ from django.contrib.auth.models import User
 from .models import Stock
 from user.models import Order, Cart
 
-# Create your views here.
+
+# Index view.
 def index(request):
     items = Stock.objects.all()
     return render(request, "sahara/index.html", {'items': items})
 
 
+# Placing the order
+@login_required()
 def place(request):
 
     if request.method == "GET":
@@ -26,18 +29,26 @@ def place(request):
             if item == order.product:
                 print("in cart")
                 in_cart = True
-                order.quantity += 1
-                order.save()
+                if item.quantity >= 1:
+                    order.quantity += 1
+                    item.quantity -=1
+                    item.save()
+                    order.save()
                 break
 
         if not in_cart:
-            order = Order(cart=user.cart, product=item)
-            order.save()
-            user.cart.order_set.add(order)
-        #user.save()
+            if item.quantity >=1:
+                order = Order(cart=user.cart, product=item)
+                order.save()
+                item.save()
+                user.cart.order_set.add(order)
+                item.quantity -= 1
+
     return HttpResponse("success")
 
 
+# removing order from cart
+@login_required()
 def remove(request):
 
     if request.method == "GET":
@@ -45,7 +56,11 @@ def remove(request):
         print(ID)
         order = Order.objects.filter(id=ID)
         order = order[0]
+        item = Stock.objects.filter(id=order.product.id)
+        item = item[0]
+        item.quantity += order.quantity
         order.delete()
+        item.save()
 
     return HttpResponse("success")
 
