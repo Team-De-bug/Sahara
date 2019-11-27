@@ -71,6 +71,18 @@ def remove(request):
 
 @login_required()
 def cart(request):
+
+    if request.method == "POST":
+        order = Order.objects.filter(id=request.POST['order_id'])
+        order = order[0]
+        item = Stock.objects.filter(id=order.product.id)
+        item = item[0]
+        shift = int(request.POST['qty']) - order.quantity
+        order.quantity = int(request.POST['qty'])
+        item.quantity -= shift
+        order.save()
+        item.save()
+
     cart = Cart.objects.filter(user=request.user)
     cart = cart[0].order_set.all()
     print(cart)

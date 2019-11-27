@@ -14,13 +14,12 @@
             </tr>
             <tr>
                 <td>Seller: {{item.product.seller}}r</td>
-                <form method="post">
+                <form method="post" action="{%url 'cart'%}">
                     {% csrf_token %}
 
-                    <td>Qty:<input type="number" value=
-                    {{item.quantity}} id="qty">
+                    <td>Qty:<input type="number" value={{item.quantity}} name="qty" id="qty">
                     </td>
-                    <td><input type="text" id="order_id" value={{item.id}}></td>
+                    <td><input type="text" id="order_id" name="order_id" value={{item.id}}></td>
                     <td><button type="submit">&#x2714;
                         </button>
                     </td>
