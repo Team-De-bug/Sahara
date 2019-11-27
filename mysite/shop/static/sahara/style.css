@@ -275,7 +275,7 @@ a{
 }
 
 #qty{
-    width: 2.5em;
+    width: 3em;
     margin-left: 5px;
 }
 
@@ -337,5 +337,9 @@ a{
     height: 2em;
     border: none;
     border-radius: 8px;
+}
+
+#invis{
+    display: none;
 }
 
