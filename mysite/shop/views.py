@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
@@ -35,7 +36,7 @@ def place(request):
                 in_cart = True
                 if item.quantity >= 1:
                     order.quantity += 1
-                    item.quantity -=1
+                    item.quantity -= 1
                     item.save()
                     order.save()
                 break
@@ -78,15 +79,34 @@ def cart(request):
         order = order[0]
         item = Stock.objects.filter(id=order.product.id)
         item = item[0]
-        if item.quantity < cq < 0:
-            return HttpResponse("not possible")
-        shift = int(request.POST['qty']) - order.quantity
-        order.quantity = int(request.POST['qty'])
-        item.quantity -= shift
-        order.save()
-        item.save()
+        if item.quantity > cq or cq > 1:
+            shift = int(request.POST['qty']) - order.quantity
+            order.quantity = int(request.POST['qty'])
+            item.quantity -= shift
+            order.save()
+            item.save()
+
+        else:
+            cart = Cart.objects.filter(user=request.user)
+            total = get_cart_total(cart)
+            messages.error(request, f'not possible!')
+
+            return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
 
     cart = Cart.objects.filter(user=request.user)
+    total = get_cart_total(cart)
+    return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
+
+
+def get_total(order):
+    return order.quantity * order.product.cost
+
+
+def get_cart_total(cart):
     cart = cart[0].order_set.all()
-    print(cart)
-    return render(request, "sahara/cart.html", {'cart': cart})
+
+    total = 0
+    for order in cart:
+        total += get_total(order)
+
+    return total
