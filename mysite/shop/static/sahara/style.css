@@ -107,7 +107,7 @@ body{
     padding-left: 4em;
     padding-right: 4em;
     display: inline-block;
-    position: relative;
+    position: absolute;
 }
 
 #subcats{
