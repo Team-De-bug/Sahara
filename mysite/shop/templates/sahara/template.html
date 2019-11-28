@@ -32,15 +32,15 @@
                 <div id="catsdiv">
                     <button id="categorybtn">Categories</button>
                     <div id="category_content">
-                        <a href="#">Cat1</a>
-                        <a href="#">Cat2</a>
+                        <a href="/index?cat=cat1">Cat1</a>
+                        <a href="/index?cat=cat2">Cat2</a>
                     </div>
                 </div>
 
             {% if user.is_authenticated%}
             <div id="signin_btn"><div id="signdiv"><a href="{% url 'logout'%}">Sign out</a></div></div>
             {% else %}
-                <div id="signin_btn"><a href="{% url 'login'%}"><div>Sign in</div></a></div>
+                <div id="signin_btn"><div id="signdiv"><a href="{% url 'login'%}">Sign in</a></div>
             {% endif %}
     </div>
 </div>
