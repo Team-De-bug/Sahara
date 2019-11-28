@@ -6,62 +6,28 @@
 
     <form method="POST" action="/profile" enctype="multipart/form-data">
     {% csrf_token %}
-
-        {% for field in form %}
-        <p>{{field}}</p>
-        {% endfor %}
-
-    <!---
-    <div id="profile_title">
+        <div id="profile_title">
         Profile
-    </div>
-    <table id="profile_table">
-        <tr>
-            <td>
-                <div id="profile_imgdiv">
-                    <img id="profile_img" src="{{user.profile.profile_pic.url}}">
-                </div>
-            </td>
-            <td>
-                <div id="profile_info">
-                    <table id="info_table">
-                        <tr>
-                            <td>Username:
-                            </td>
-                            <td>
-                                <input value="{{user.username}}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>First Name:
-                            </td>
-                            <td>
-                               <input value=" {{user.first_name}}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Last Name:
-                            </td>
-                            <td>
-                                <input value=" {{user.last_name}}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Email Address:
-                            </td>
-                            <td>
-                               <input  value=" {{user.email}}">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-        <tr><td></td>
-            <td></td>
--->
-            <button id="save" type="submit">Save</button>
-        </form>
+        </div>
+        <table id="profile_table">
+            <tr>
+                <td>
+                    <div id="profile_imgdiv">
+                        <img id="profile_img" src="{{user.profile.profile_pic.url}}">
+                    </div>
+                </td>
+                <td>
+                    <div id="profile_info">
+                        {% for field in form %}
+                        {{field.label_tag}}
+                        <p>{{field}}</p>
+                        {% endfor %}
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button id="save" type="submit">Save</button>
+    </form>
 </div>
 {% endblock %}
 

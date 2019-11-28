@@ -14,6 +14,7 @@ a{
 body{
     color: white;
     font-family: item,sans-serif;
+    font-size: 18px;
 }
 
 .top {
@@ -106,7 +107,7 @@ body{
     padding-left: 4em;
     padding-right: 4em;
     display: inline-block;
-    position: fixed;
+    position: absolute;
 }
 
 #subcats{
@@ -371,7 +372,7 @@ a{
     position: absolute;
     top: 5.5em;
     width: 47em;
-    margin-left: 2em;
+    margin-left: -1em;
 }
 
 
@@ -409,15 +410,15 @@ a{
     padding-top: 1em;
 }
 
-#profile{
-    background-color: #383838;
-    height: 23em;
-    width: 50em;
+#profile_name{
+    margin: auto;
     margin-top: 1em;
-    margin-left: 8.5em;
-    border-radius: 8px;
+    padding-bottom: 1em;
     padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1em;
+    width: 51em;
+    border-radius: 8px;
+    background-color: #383838
 }
 
 #profile_title{
@@ -437,16 +438,19 @@ a{
     width: 120px;
     padding: 12px;
     border-radius: 16px;
-    margin-top: 2em;
+    margin-top: -2em;
 }
 
 #profile_img{
     height: 120px;
-    height: 120px;
+    width: 120px;
+    border-radius: 8px;
 
 }
 
 #profile_info{
+    margin-top: 2em;
+    margin-left: 5em;
     height: auto;
 }
 
