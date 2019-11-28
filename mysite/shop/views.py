@@ -12,8 +12,10 @@ cat = ['IoT', 'circuits', 'kits', 'mc', 'other']
 
 # Index view.
 def index(request):
-    if request.method == "GET":
+
+    if 'cat' in request.GET:
         items = Stock.objects.filter(cat=request.GET['cat'])
+
     else:
         items = Stock.objects.all()
     items = list(items)
@@ -85,7 +87,7 @@ def cart(request):
         item = Stock.objects.filter(id=order.product.id)
         item = item[0]
 
-        if item.quantity > cq or cq > 1:
+        if item.quantity > cq > 1:
             shift = int(request.POST['qty']) - order.quantity
             order.quantity = int(request.POST['qty'])
             item.quantity -= shift
@@ -94,17 +96,19 @@ def cart(request):
 
         else:
             cart = Cart.objects.filter(user=request.user)
-            cart = cart
+            cart = cart[0]
             total = get_cart_total(cart)
-            #messages.error(request, f'not possible!')
+            orders = cart.order_set.all()
+            messages.error(request, f'not possible!')
 
-            return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
+            return render(request, "sahara/cart.html", {'cart': orders, 'total': total})
 
     cart = Cart.objects.filter(user=request.user)
     cart = cart[0]
+    print(cart)
     total = get_cart_total(cart)
-    cart = cart.order_set.all()
-    return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
+    orders = cart.order_set.all()
+    return render(request, "sahara/cart.html", {'cart': orders, 'total': total})
 
 
 def get_total(order):
@@ -113,7 +117,6 @@ def get_total(order):
 
 def get_cart_total(cart):
     orders = cart.order_set.all()
-
     total = 0
     for order in orders:
         total += get_total(order)
