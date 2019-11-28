@@ -7,6 +7,10 @@
     src: url(FulboTano-d9ABZ.otf);
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     color: white;
     font-family: item,sans-serif;
@@ -91,17 +95,78 @@ body{
     height: 10em;
 }
 
-#subcats{
+#cats{
     padding-left: 4em;
     padding-right: 4em;
 }
 
+#signin_btn{
+    font-size: 18px;
+    margin-top: 0.2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    display: inline-block;
+    position: fixed;
+}
+
+#subcats{
+    width: auto;
+    margin-left: 31em;
+}
+
 .subcats{
+    height: 2em;
     width: 101.25%;
     margin-left: -8px;
     background-color: #2e2e2e;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+#signdiv{
+    position: relative;
+    display: inline-block;
+}
+
+#catsdiv{
+    position: relative;
+    display: inline-block;
+
+}
+
+#categorybtn{
+    margin-top: 0.2em;
+    background-color: #2e2e2e;
+    border: none;
+    color: white;
+    font-family: item, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#category_content{
+    margin-top: -0.3em;
+    display: none;
+}
+
+#category_content a {
+    padding: 1em;
+    background-color: #5e5e5e;
+    color: white;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+
+}
+
+#category_content a:hover {
+    background-color: #525252;
+}
+
+#catsdiv:hover #category_content {
+    display: block;
+
 }
 
 #item_space{
@@ -119,6 +184,7 @@ body{
     margin-left: 0.7em;
     margin-right: 0.7em;
     display: inline-block;
+    z-index: -1;
 }
 
 
@@ -343,13 +409,12 @@ a{
     padding-top: 1em;
 }
 
-#
-
-#profile_name{
+#profile{
     background-color: #383838;
     height: 23em;
-    width: 90%;
+    width: 50em;
     margin-top: 1em;
+    margin-left: 8.5em;
     border-radius: 8px;
     padding-left: 1em;
     padding-right: 1em;
@@ -358,7 +423,7 @@ a{
 #profile_title{
     background-color: #585858;
     height: 2em;
-    width: 102.3%;
+    width: 51.5em;
     margin-left: -1em;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -377,17 +442,12 @@ a{
 
 #profile_img{
     height: 120px;
+    height: 120px;
+
 }
 
 #profile_info{
     height: auto;
-}
-
-#info_table{
-    height: 12em;
-    width: 27em;
-    margin-left: 2em;
-    margin-top: 2em;
 }
 
 #profile_table{
@@ -427,4 +487,11 @@ a{
 
 #signup{
     margin: auto;
+}
+
+#info_table{
+    height: 12em;
+    width: 27em;
+    margin-left: 2em;
+    margin-top: 2em;
 }
