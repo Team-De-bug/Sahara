@@ -28,17 +28,21 @@
     </div>
 </div>
 <div class="subcats">
-    <table id="head">
-        <tr>
-            <td id="subcats">Categories</td>
-            <td id="subcats">IoT</td>
+    <div id="subcats">
+                <div id="catsdiv">
+                    <button id="categorybtn">Categories</button>
+                    <div id="category_content">
+                        <a href="#">Cat1</a>
+                        <a href="#">Cat2</a>
+                    </div>
+                </div>
+
             {% if user.is_authenticated%}
-                <td id="subcats"><a href="{% url 'logout'%}"><div>Sign out</div></a></td>
+            <div id="signin_btn"><div id="signdiv"><a href="{% url 'logout'%}">Sign out</a></div></div>
             {% else %}
-                <td id="subcats"><a href="{% url 'login'%}"><div>Sign in</div></a></td>
+                <div id="signin_btn"><a href="{% url 'login'%}"><div>Sign in</div></a></div>
             {% endif %}
-        </tr>
-    </table>
+    </div>
 </div>
 <div id="item_space">
     {% if messages %}
