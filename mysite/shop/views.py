@@ -10,6 +10,8 @@ from user.models import Order, Cart
 
 # Index view.
 def index(request):
+    if request.method == "GET":
+        pass
     items = Stock.objects.all()
     items = list(items)
     for item in items:
@@ -79,6 +81,7 @@ def cart(request):
         order = order[0]
         item = Stock.objects.filter(id=order.product.id)
         item = item[0]
+
         if item.quantity > cq or cq > 1:
             shift = int(request.POST['qty']) - order.quantity
             order.quantity = int(request.POST['qty'])
@@ -88,13 +91,16 @@ def cart(request):
 
         else:
             cart = Cart.objects.filter(user=request.user)
+            cart = cart
             total = get_cart_total(cart)
-            messages.error(request, f'not possible!')
+            #messages.error(request, f'not possible!')
 
             return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
 
     cart = Cart.objects.filter(user=request.user)
+    cart = cart[0]
     total = get_cart_total(cart)
+    cart = cart.order_set.all()
     return render(request, "sahara/cart.html", {'cart': cart, 'total': total})
 
 
@@ -103,10 +109,10 @@ def get_total(order):
 
 
 def get_cart_total(cart):
-    cart = cart[0].order_set.all()
+    orders = cart.order_set.all()
 
     total = 0
-    for order in cart:
+    for order in orders:
         total += get_total(order)
 
     return total
