@@ -23,13 +23,14 @@ from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cart/',shop_views.cart, name='cart'),
+    path('cart/', shop_views.cart, name='cart'),
     path('profile', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name="login"),
     path('signup/', user_views.signup, name="signup"),
     path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name="logout"),
     path('place', shop_views.place),
     path('remove', shop_views.remove),
+    path('bill', shop_views.bill, name='bill'),
     path('', shop_views.index, name="index"),
 
 ]

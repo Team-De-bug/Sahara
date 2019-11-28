@@ -7,17 +7,20 @@ from django.contrib.auth.models import User
 from .models import Stock
 from user.models import Order, Cart
 
+cat = ['IoT', 'circuits', 'kits', 'mc', 'other']
+
 
 # Index view.
 def index(request):
     if request.method == "GET":
-        pass
-    items = Stock.objects.all()
+        items = Stock.objects.filter(cat=request.GET['cat'])
+    else:
+        items = Stock.objects.all()
     items = list(items)
     for item in items:
         if item.quantity < 1:
             items.remove(item)
-    return render(request, "sahara/index.html", {'items': items})
+    return render(request, "sahara/index.html", {'items': items, "cat": cat})
 
 
 # Placing the order
@@ -116,3 +119,7 @@ def get_cart_total(cart):
         total += get_total(order)
 
     return total
+
+
+def bill(request):
+    return render(request, 'sahara/bill.html')

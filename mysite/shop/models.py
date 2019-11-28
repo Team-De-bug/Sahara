@@ -10,6 +10,7 @@ class Stock(models.Model):
     description = models.TextField(name="description", default="")
     seller = models.CharField(max_length=100, name="seller", default="sahara")
     product_pic = models.ImageField(default='item.png', upload_to="products", name="product_pic")
+    cat = models.CharField(max_length=50, name="cat", default="")
 
     def __str__(self):
         return self.product_name

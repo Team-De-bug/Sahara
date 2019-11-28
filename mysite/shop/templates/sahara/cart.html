@@ -36,7 +36,7 @@
             </div>
         </td>
     </tr>
-    <tr id="itemss">
+    <tr id="itemss", class="order">
         <td class="item_in_cart">
             {% for item in cart%}
             <div id="cart_item">
@@ -79,7 +79,7 @@
 
   $(function() {
 
-    $("a").click(function() {
+    $(".order").click(function() {
       var id = this.id;
       console.log(id);
         $.ajax({

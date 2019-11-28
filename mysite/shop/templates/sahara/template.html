@@ -32,8 +32,9 @@
                 <div id="catsdiv">
                     <button id="categorybtn">Categories</button>
                     <div id="category_content">
-                        <a href="/index?cat=cat1">Cat1</a>
-                        <a href="/index?cat=cat2">Cat2</a>
+                        {% for i in cat %}
+                        <a href="/?cat={{i}}">{{i}}</a>
+                        {% endfor %}
                     </div>
                 </div>
 
