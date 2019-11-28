@@ -73,10 +73,13 @@ def remove(request):
 def cart(request):
 
     if request.method == "POST":
+        cq = int(request.POST['qty'])
         order = Order.objects.filter(id=request.POST['order_id'])
         order = order[0]
         item = Stock.objects.filter(id=order.product.id)
         item = item[0]
+        if item.quantity < cq < 0:
+            return HttpResponse("not possible")
         shift = int(request.POST['qty']) - order.quantity
         order.quantity = int(request.POST['qty'])
         item.quantity -= shift

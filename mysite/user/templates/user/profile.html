@@ -3,6 +3,11 @@
 
 {%block content%}
 <div id="profile_name">
+
+    <form method="POST" action="/profile" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <!---
     <div id="profile_title">
         Profile
     </div>
@@ -50,10 +55,9 @@
         </tr>
         <tr><td></td>
             <td></td>
-            <td><button id="save" type="submit">Save</button>
-            </td>
-        </tr>
-    </table>
+-->
+            <button id="save" type="submit">Save</button>
+        </form>
 </div>
 {% endblock %}
 
