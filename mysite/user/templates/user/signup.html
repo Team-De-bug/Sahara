@@ -3,34 +3,41 @@
 {%load static%}
 
 {{form.non_field_errors}}
+<table id="signup">
+    <tr>
+        <td>
+            <div id="logup">
+                <div id="login_title">
+                    Sign up
+                </div>
 
-<div id="logup">
-    <div id="login_title">
-        Sign up
-    </div>
+                <form id="signup" method="POST">
+                    {% csrf_token %}
 
-    <form id="signup" method="POST">
-        {% csrf_token %}
+                    <p><label for="id_username">Username:</label>
+                        {{ form.username }}</p>
+                    <p><label for="id_email">Email:</label>
+                        {{ form.email }}</p>
+                    <p><label for="id_password1">Password:</label>
+                        {{ form.password1 }}</p>
+                    <p><label for="id_password2">Confirm Password:</label>
+                        {{ form.password2 }}</p>
+                    <button type="submit" id="submit">Signup</button>
+                    <div id="ask">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
+                </form>
+            </div>
+        <td>
 
-        <p><label for="id_username">Username:</label>
-            {{ form.username }}</p>
-        <p><label for="id_email">Email:</label>
-            {{ form.email }}</p>
-        <p><label for="id_password1">Password:</label>
-            {{ form.password1 }}</p>
-        <p><label for="id_password2">Confirm Password:</label>
-            {{ form.password2 }}</p>
-        <button type="submit" id="submit">Signup</button>
-        <div id="ask">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
-    </form>
-</div>
-
-<div id='login'>
-    <h3>note:</h3> username
-    {{form.username.help_text}}
-    {{form.email.help_text}}
-    {{form.password1.help_text}}
-    {{form.password2.help_text}}
-</div>
+        <td>
+            <div id='errordiv'>
+                    <div id="login_title">note:</div><div id="error"> username
+                    {{form.username.help_text}}
+                    {{form.email.help_text}}
+                    {{form.password1.help_text}}
+                    {{form.password2.help_text}}
+                </div>
+            </div>
+        </td>
+    </tr>
 
 {% endblock %}

@@ -34,6 +34,7 @@ body{
 }
 
 #title{
+    margin-left: 29.5em;
     margin-top: -2em;
 }
 
@@ -64,7 +65,14 @@ body{
     height: 34.968em;
 }
 
-table{
+#info{
+    color: white;
+    font-size: 18px;
+    margin: auto;
+    width: auto;
+}
+
+#head{
     color: white;
     font-size: 18px;
     margin: auto;
@@ -162,7 +170,7 @@ table{
 #logup{
     background-color: #2e2e2e;
     width:25em;
-    height: 31.5em;
+    height: 31em;
     margin: auto;
     margin-top: 1.5em;
     border-radius: 8px;
@@ -246,7 +254,7 @@ a{
 
 #cart_item{
     background-color: #383838;
-    width: 85%;
+    width: 47em;
     height: 250px;
     border-radius: 8px;
     margin-top: 2em;
@@ -261,7 +269,7 @@ a{
 }
 
 #cart_info{
-    margin-left: 3em;
+    margin-left: 1em;
     display: inline-block;
 }
 
@@ -271,13 +279,71 @@ a{
 }
 
 #cart_price{
-    width: 500px;
+    width: 300px;
 }
 
 #qty{
     width: 2em;
     margin-left: 5px;
 }
+
+#totaldiv{
+    margin-top: 2em;
+    float: right;
+    border-radius: 8px;
+    background-color: #2e2e2e;
+    height: auto;
+    width: 15em;
+    margin-left: 2em;
+}
+
+#total_cart_table{
+    width: 100%
+}
+
+.item_in_cart{
+    position: absolute;
+    top: 5.5em;
+    width: 47em;
+    margin-left: 2em;
+}
+
+
+#bill_title{
+    margin-bottom: 0.1em;
+    background-color: #414141;
+    height: 2em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+#item_summary{
+    width: 14em;
+    margin-top: 0.1em;
+    background-color: #585858;
+    height: auto;
+    padding: 0.5em;
+    text-align: left;
+}
+
+#items_summary_td{
+    width: 10em;
+}
+
+#cost_total{
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    background-color: #414141;
+    height: 2em;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+#
 
 #profile_name{
     background-color: #383838;
@@ -343,3 +409,22 @@ a{
     display: none;
 }
 
+#error{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#errordiv{
+    background-color: #2e2e2e;
+    width:25em;
+    height: 23em;
+    margin: auto;
+    margin-top: 1.5em;
+    border-radius: 8px;
+}
+
+#signup{
+    margin: auto;
+}

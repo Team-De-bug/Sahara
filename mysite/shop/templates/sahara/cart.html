@@ -2,43 +2,83 @@
 {% load static%}
 
 {%block content%}
-{% for item in cart%}
-<div id="cart_item">
-    <div id="cart_img">
-        <img id="cart_img" src="{{ item.product.product_pic.url }}">
-    </div>
-    <div id="cart_info">
-        <table id="cart_table">
-            <tr>
-                <td>Product Name: {{item.product.product_name}}</td>
-            </tr>
-            <tr>
-                <td>Seller: {{item.product.seller}}r</td>
-                <form method="post" action="{%url 'cart'%}">
-                    {% csrf_token %}
+<table id="total_cart_table">
+    <tr>
+        <td>
+            <div id="totaldiv">
+                <div id="bill_title">Order Summary</div>
+                {% for item in cart%}
+                <div id="item_summary">
+                    <table>
+                        <tr>
+                            <td id="items_summary_td">
+                                {{item.product.product_name}}
+                            </td>
+                            <td>
+                                ₹ {{item.product.cost}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                {% endfor %}
+                <div id="cost_total">
+                    <table>
+                        <tr>
+                           <td id="items_summary_td">
+                                Total
+                            </td>
+                            <td>
+                                ₹  {{item.product.cost}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr id="itemss">
+        <td class="item_in_cart">
+            {% for item in cart%}
+            <div id="cart_item">
+                <div id="cart_img">
+                    <img id="cart_img" src="{{ item.product.product_pic.url }}">
+                </div>
+                <div id="cart_info">
+                    <table id="cart_table">
+                        <tr>
+                            <td>Product Name: {{item.product.product_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Seller: {{item.product.seller}}</td>
+                            <form method="post" action="{%url 'cart'%}">
+                                {% csrf_token %}
 
-                    <td>Qty:<input type="number" value={{item.quantity}} name="qty" id="qty">
-                    </td>
-                    <td><input type="text" id="order_id" name="order_id" value={{item.id}}></td>
-                    <td><button type="submit">&#x2714;
-                        </button>
-                    </td>
+                                <td>Qty:<input type="number" value={{item.quantity}} name="qty" id="qty">
+                                </td>
+                                <td><input type="text" id="order_id" name="order_id" value={{item.id}}></td>
+                                <td><button type="submit">&#x2714;
+                                    </button>
+                                </td>
 
-                </form>
-            </tr>
-            <tr>
-                <td id="cart_price"> Price: ₹ {{item.product.cost}}</td>
-                <td><a href="/cart/" id='{{item.id}}'>Delete</a></td>
-            </tr>
-        </table>
-    </div>
-</div>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td id="cart_price"> Price: ₹ {{item.product.cost}}</td>
+                            <td><a href="/cart/" id='{{item.id}}'>Delete</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-{% endfor %}
-
+            {% endfor %}
+        </td>
+    </tr>
+</table>
 
 <script >
+
   $(function() {
+
     $("a").click(function() {
       var id = this.id;
       console.log(id);
