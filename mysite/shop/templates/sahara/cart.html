@@ -28,7 +28,7 @@
                                 Total
                             </td>
                             <td>
-                                ₹  {{total}}
+                                ₹ {{total}}
                             </td>
                         </tr>
                     </table>
@@ -40,7 +40,7 @@
         <td class="item_in_cart">
             {% for item in cart%}
             <div id="cart_item">
-                <div id="cart_img">
+                <div id="cart_img_div">
                     <img id="cart_img" src="{{ item.product.product_pic.url }}">
                 </div>
                 <div id="cart_info">

@@ -194,13 +194,15 @@ body{
     background-color: #585858;
     width: 13em;
     height: 13em;
+    line-height: 13em;
 }
 
 .icon{
     border-top-left-radius: 8px;
-    border-top-right-radius:        8px;
-    width: 13em;
-    height: 13em;
+    border-top-right-radius: 8px;
+    width: 12em;
+    border-radius: 8px;
+    vertical-align: middle;
 }
 
 .info{
@@ -327,6 +329,14 @@ a{
     margin-top: 2em;
 }
 
+#cart_img_div{
+    background-color: #585858;
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
 #cart_img{
     background-color: #585858;
     height: 250px;
@@ -396,7 +406,7 @@ a{
 }
 
 #items_summary_td{
-    width: 10em;
+    width: 9em;
 }
 
 #cost_total{
