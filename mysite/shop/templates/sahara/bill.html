@@ -4,13 +4,53 @@
 <html>
 <head>
     <title>Sahara Order Bill</title>
-    <link rel="stylesheet" type="text/css" href="{%static 'sahara/bill.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'sahara/style.css'%}">
     <link rel="shortcut icon" href="{% static 'sahara/favicon.ico'%}">
 </head>
 
 <body bgcolor="#0f0f0f">
     <div id="logo">
         <img src="{%static 'sahara/Title.png'%}">
+    </div>
+    <h1>Your Bill</h1>
+    <div>
+        <table id="bill_table">
+            <tr class="bill_tr">
+                <th>
+                    Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Cost
+                </th>
+            </tr>
+            {%for order in orders%}
+            <tr>
+                <td>
+                    <div class="td_1">
+                        {{ order.product.product_name }}
+                    </div>
+                </td>
+                <td class="bill_td">
+                    <div class="td_2">
+                        {{ order.quantity }}
+                    </div>
+                </td>
+                <td class="bill_td_2">
+                    <div class="td_3">
+                        ₹ {{ order.product.cost }}
+                    </div>
+                </td>
+            </tr>
+            {%endfor%}
+            <tr>
+                <td><div class="td_1">Total:</div></td>
+                <td><div class="td_4">-</div></td>
+                <td class="bill_td_2"><div class="td_3">₹ {{total}}</div></td>
+            </tr>
+        </table>
     </div>
 
 </body>

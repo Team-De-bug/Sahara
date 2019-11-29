@@ -499,3 +499,44 @@ a{
     margin-left: 2em;
     margin-top: 2em;
 }
+
+.bill_td{
+    text-align: center;
+}
+
+.bill_td_2{
+    text-align: right;
+}
+
+.td_1{
+    width: 25em;
+    border-style: solid solid solid none;
+}
+
+.td_2{
+    width: 10em;
+    border-style: solid solid solid none;
+    margin-left: -4px;
+}
+
+.td_3{
+    width: 10em;
+    border-style: solid none solid none;
+    margin-left: -4px;
+}
+
+.td_4{
+    border-style: solid solid solid none;
+    margin-left: -4px;
+    color: #0f0f0f;
+    border-color: white;
+}
+
+#bill_table {
+    margin: auto;
+    height: 15em;
+}
+
+h1{
+    text-align: center;
+}

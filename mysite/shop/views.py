@@ -124,5 +124,10 @@ def get_cart_total(cart):
     return total
 
 
+@login_required()
 def bill(request):
-    return render(request, 'sahara/bill.html')
+    user = User.objects.filter(username=request.user.username)
+    user = user[0]
+    orders = user.cart.order_set.all()
+    total = get_cart_total(user.cart)
+    return render(request, 'sahara/bill.html', {'orders': orders, 'total':total})
