@@ -201,6 +201,7 @@ body{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 12em;
+    height: 12em;
     border-radius: 8px;
     vertical-align: middle;
 }
@@ -549,4 +550,12 @@ a{
 
 h1{
     text-align: center;
+}
+
+#place{
+    border-radius: 8px;
+    padding: 0.5em;
+    width: 6.5em;
+    margin-top: 2em;
+    background-color: #2e2e2e;
 }
